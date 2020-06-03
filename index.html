@@ -1,33 +1,146 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title>Coming Soon</title>
-<link href="tools/style.css" rel="stylesheet" type="text/css" media="screen" />
-<script type="text/javascript" src="tools/jquery.min.js"></script> 
-<link href='http://fonts.googleapis.com/css?family=Josefin+Sans:600,700|Damion' rel='stylesheet' type='text/css'>
-<meta name="viewport" content="width=device-width, initial-scale = 1.0, user-scalable = no">
+---
+layout: default
+section_id: home
+slides:
+- layout: default
+  title: Wedding Photography
+  tagline: Capturing your dream wedding
+  image: images/@stock/ring-white.png
+  background: images/@stock/010.jpg
+- layout: default
+  title: A collection of love stories
+  tagline: Patel Art
+  image: images/@stock/ring-white.png
+  background: images/@stock/bg.jpg
+works_left:
+- title: Ruchi & Sanket
+  link_to: project-1.html
+  image: images/@stock/DSC_6024.JPG
+  categories: Website, brand
+- title: Janki & Akash
+  link_to: project-3.html
+  image: images/@stock/DSC_6046.JPG
+  categories: Website, print
+- title: Green choice
+  link_to: portfolio-item.html
+  image: images/@stock/work-22.jpg
+  categories: Website
+- title: Perfect bags
+  link_to: portfolio-item-2.html
+  image: images/@stock/work-7.jpg
+  categories: Perfect bags
+works_right:
+- title: Pinal & Dhruv
+  link_to: project-2.html
+  image: images/@stock/DSC_0494.JPG
+  categories: Website
+- title: Wedding 4
+  link_to: portfolio-item.html
+  image: images/@stock/035.jpg
+  categories: Graphic, brand
+- title: Wedding 6
+  link_to: portfolio-item-2.html
+  image: images/@stock/rsz_14.jpg
+  categories: Photography
+- title: Brandbooks
+  link_to: portfolio-item.html
+  image: images/@stock/work-8.jpg
+  categories: Website, graphic
+---
 
-</head>
-<body>
-<div class="black"></div>
-<div id="wrapper">
-	<div id="header">
-		<h1>Patel Art</h1>
-		<h2><strong class="sep-one"></strong>Capturing your dream wedding.<strong class="sep-two"></strong></h2>
-	</div>
-	<div id="middle">
-		<p>I am a professional wedding photographer based out of Veraval, Gujarat, India.</p>
-	</div>
-	<div id="footer">
-		<div>
-		<ul class="social">
-			<li class="facebook"><a href="https://www.facebook.com/patel.art.5"></li>
-			<li class="twitter"><a href="#"></li>
-			<li class="youtube"><a href="#"></li>
-		</ul>
-		</div>
-	</div>
+<div class="full no-padding">
+  <div id="slides" class="fullscreen">
+    <div class="slides-container">
+      {% for slide in page.slides %}
+        <div class="slide">
+          <div class="slide-info">
+            <div class="row">
+              <div class="large-10 large-centered columns">
+                {% if slide.layout == 'default' %}
+                  <div class="image-wrapper" style="background-image: url({{site.url}}/{{slide.image}});"></div>
+                  <div class="two spacing"></div>
+                  <h1>{{slide.title}}</h1>
+                  <p>{{slide.tagline}}</p>
+                {% else %}
+                  <div class="image-wrapper" style="background-image: url({{site.url}}/{{slide.image_top}});"></div>
+                  <div class="image-wrapper arrows" style="background-image: url({{site.url}}/{{slide.image_bottom}});"></div>
+                  <div class="three spacing"></div>
+                  <h1>{{slide.title}}</h1>
+                {% endif %}
+              </div>
+            </div>
+          </div>
+          <img src="{{site.url}}/{{slide.background}}" alt="">
+        </div>
+      {% endfor %}
+    </div>
+    <nav class="slides-navigation">
+      <a href="#" class="next"><i class="icon-arrows-slim-right"></i></a>
+      <a href="#" class="prev"><i class="icon-arrows-slim-left"></i></a>
+    </nav>
+  </div>
 </div>
-</body>
-</html>
+
+<div class="full centered-text light-grey">
+  <div class="section-title small">
+    <div class="row">
+      <div class="medium-10 medium-centered columns">
+
+        <div class="spacing"></div>
+        <h2>About Me</h2>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="large-10 large-centered columns">
+      <p class="big-text">
+        I’m a professional Wedding & Events Photographer that specializes in capturing your most beloved moments on film. I am a storyteller at heart, and focus my skills on artistically capturing the look and feel of one of your most important moments in your life.
+      </p>
+      <p class="big-text">
+        Please reach out for details about my services.
+      </p>
+    </div>
+  </div>
+</div>
+<div class="full">
+  <div class="section-title">
+    <div class="row">
+      <div class="medium-10 medium-centered columns">
+        <h2>Recent works</h2>
+        <p>You will love we have done</p>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="large-6 columns">
+      <div class="gallery-left-section">
+        {% for work in page.works_left %}
+          <div class="work-wrapper">
+            <a href="{{work.link_to}}" class="work">
+              <img src="{{site.url}}/{{work.image}}" alt="">
+              <div class="info">
+                <h3>{{work.title}}</h3>
+                <p>{{work.categories}}</p>
+              </div>
+            </a>
+          </div>
+        {% endfor %}
+      </div>
+    </div>
+    <div class="large-6 columns">
+      <div class="gallery-right-section">
+        {% for work in page.works_right %}
+          <div class="work-wrapper">
+            <a href="{{work.link_to}}" class="work">
+              <img src="{{site.url}}/{{work.image}}" alt="">
+              <div class="info">
+                <h3>{{work.title}}</h3>
+                <p>{{work.categories}}</p>
+              </div>
+            </a>
+          </div>
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+</div>
