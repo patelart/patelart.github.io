@@ -325,7 +325,7 @@ body {
   padding-left: 15px; }
   .title-area h1 a {
     color: #333;
-    font-size: 18px;
+    font-size: 24px;
     font-family: "josefin sans";
     text-transform: uppercase;
     font-weight: 600;
@@ -362,6 +362,7 @@ body {
 .top-bar-section ul li > a {
   font-family: "josefin sans";
   font-size: 14px;
+  font-weight: bold;
   text-transform: uppercase;
   letter-spacing: 2px; }
 
