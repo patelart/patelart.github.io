@@ -36,7 +36,25 @@
 
   .top-bar-section li.active:not(.has-form) a:not(.button):hover, .top-bar-section li:not(.has-form) a:not(.button):hover {
     background: transparent;
-    color: #fff; } }
+    color: #fff; }
+  
+  .top-bar-section .nav-font-color:not(.has-form) a:not(.button) {
+    background: transparent;
+    color: #ab8860; }
+  
+  .top-bar-section .nav-font-color.active:not(.has-form) a:not(.button) {
+    background: transparent;
+    color: #ab8860; }  
+
+  .top-bar-section .nav-font-color:hover:not(.has-form) > a {
+    background: transparent; }
+  
+  .top-bar-section .nav-font-color.active:not(.has-form) a:not(.button):hover, .top-bar-section li:not(.has-form) a:not(.button):hover {
+    background: transparent;
+    color: #ab8860; }
+    
+  .top-bar-section .nav-font-color {
+    color: #ab8860; } }
 @media only screen and (max-width: 1240px) {
   .slides-navigation {
     display: none; } }

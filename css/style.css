@@ -320,6 +320,10 @@ body {
     -o-transform: translateX(0);
     transform: translateX(0); } }
 /* Navigation */
+.nav-font-color {
+  color: #ab8860;
+}
+
 .title-area h1 {
   line-height: 1;
   padding-left: 15px; }

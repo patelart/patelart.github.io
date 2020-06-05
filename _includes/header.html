@@ -23,9 +23,15 @@
           {% else %}
             {% assign active_class = "" %}
           {% endif %}
+          
+          {% if page.section_id != "home" %}
+            {% assign color_class = "nav-font-color" %}
+          {% else %}
+            {% assign color_class = "" %}
+          {% endif %}
 
           {% if item.children %}
-            <li class="has-dropdown {{active_class}}">
+            <li class="has-dropdown {{active_class}} {{color_class}}">
               <a href="{{site.url}}/{{ item.path }}">{{ item.name }}</a>
               <ul class='dropdown'>
                 {% for child in item.children %}
@@ -36,7 +42,7 @@
               </ul>
             </li>
           {% else %}
-            <li class="{{active_class}}">
+            <li class="{{active_class}} {{color_class}}">
               <a href="{{site.url}}/{{ item.path }}">{{ item.name }}</a>
             </li>
           {% endif %}
